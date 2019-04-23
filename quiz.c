@@ -1,17 +1,27 @@
 #include <stdio.h>
+
+// Create two global vars
 char * global_hello;
+char * global_world;
 
-void set_hello(){
-	char hello[] = "Hello\r\n";
-	global_hello = hello;
-}
-void print_hello(){
-	char world[] = "World\r\n";
-	puts(global_hello);
+void set_hello() {
+  // Store hello
+  char hello[] = "Hello";
+  global_hello = hello;
 }
 
-int main(void) {
-	set_hello();
-	print_hello();
-	return 0;
+void set_world_and_print_both() {
+  // Store world
+  char world[] = "World";
+  global_world = world;
+
+  // Print all
+  puts(global_hello);
+  puts(global_world);
+}
+
+int main() {
+  set_hello();
+  set_world_and_print_both();
+  return 0;
 }
